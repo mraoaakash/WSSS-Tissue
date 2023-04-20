@@ -25,6 +25,5 @@ python 3_train_stage2.py                    \
     --dataroot datasets/LUAD-HistoSeg        \
     --epochs 30                              \
     --Is_GM False                           \
-    --resume_stage1 checkpoints/stage1_checkpoint_trained_on_$DATASET.pth\
     --resume init_weights/deeplab-resnet.pth.tar\
     >> logs/stage2_log_on_$DATASET.txt
