@@ -8,21 +8,21 @@ DATASETNAME=LUAD-HistoSeg
 
 ##  Run Stage1: To train and test the ResNet38-based multi-label classification model.
 python 1_train_stage1.py                    \
-    --dataset $DATASET                      \
-    --trainroot datasets/$DATASETNAME/train/\
-    --testroot datasets/$DATASETNAME/test/  \
-    --max_epoches 20                        \
+    # --dataset luad                      \
+    # --trainroot datasets/LUAD-HistoSeg/train/\
+    # --testroot datasets/LUAD-HistoSeg/test/  \
+    # --max_epoches 20                        \
     >> logs/stage1_log_on_$DATASET.txt
 ##  Generate Pseudo-Mask: Generate 3-level PMs by above model of Stage1.
 python 2_generate_PM.py                       \
-    --dataroot datasets/$DATASETNAME        \
-    --dataset $DATASET                      \
+    --dataroot datasets/LUAD-HistoSeg        \
+    --dataset luad                      \
     --weights checkpoints/stage1_checkpoint_trained_on_$DATASET.pth\
     >> logs/stagePM_log_on_$DATASET.txt
 #  Run Stage2: Train the deeplab v3+ model with 3-level pseudo-mask.
 python 3_train_stage2.py                    \
-    --dataset $DATASET                      \
-    --dataroot datasets/$DATASETNAME        \
+    --dataset luad                      \
+    --dataroot datasets/LUAD-HistoSeg        \
     --epochs 30                              \
     --Is_GM False                           \
     --resume_stage1 checkpoints/stage1_checkpoint_trained_on_$DATASET.pth\

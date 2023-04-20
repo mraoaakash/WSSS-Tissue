@@ -1,0 +1,11 @@
+
+datasets/BCSS-WSSS
+datasets/LUAD-HistoSeg
+
+outputs
+
+checkpoints/stage1_checkpoint_trained_on_bcss.pth
+checkpoints/stage1_checkpoint_trained_on_luad.pth
+checkpoints/stage2_checkpoint_trained_on_bcss.pth
+checkpoints/stage2_checkpoint_trained_on_luad.pth
+*.zip

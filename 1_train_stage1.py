@@ -146,5 +146,5 @@ if __name__ == '__main__':
     parser.add_argument("--dataset", default='bcss', type=str)
     args = parser.parse_args()
 
-    train_phase(args)
+    # train_phase(args)
     test_phase(args)
