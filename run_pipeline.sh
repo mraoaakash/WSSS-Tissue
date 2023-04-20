@@ -22,7 +22,7 @@ DATASETNAME=LUAD-HistoSeg
 # #  Run Stage2: Train the deeplab v3+ model with 3-level pseudo-mask.
 python 3_train_stage2.py                    \
     --dataset luad                      \
-    --dataroot datasets/LUAD-HistoSeg/training      \
+    --dataroot datasets/LUAD-HistoSeg      \
     --epochs 30                              \
     --Is_GM False                           \
     --resume init_weights/deeplab-resnet.pth.tar\
